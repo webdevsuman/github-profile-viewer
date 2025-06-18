@@ -72,7 +72,7 @@ const HomePg = () => {
           </Button>
         </div>
       </Box>
-      <Container className="flex justify-center gap-10 my-10">
+      <Container className="flex flex-wrap justify-center gap-10 my-10">
         {data?.map((user) => {
           return (
             <div key={user.id}>
