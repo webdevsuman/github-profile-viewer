@@ -12,9 +12,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,10 +38,12 @@ const Header = () => {
     const isDark = window.localStorage.getItem("mode");
     if (!isDark) {
       window.localStorage.setItem("mode", "dark");
-      location.reload(true);
+      navigate("/");
+      location.reload();
     } else {
       window.localStorage.removeItem("mode");
-      location.reload(true);
+      navigate("/");
+      location.reload();
     }
   };
   return (
