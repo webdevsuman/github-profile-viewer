@@ -37,10 +37,10 @@ const Header = () => {
     const isDark = window.localStorage.getItem("mode");
     if (!isDark) {
       window.localStorage.setItem("mode", "dark");
-      location.reload();
+      location.reload(true);
     } else {
       window.localStorage.removeItem("mode");
-      location.reload();
+      location.reload(true);
     }
   };
   return (
